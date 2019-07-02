@@ -13,7 +13,7 @@ pipeline {
                 }
             }
         }
-        stage('deploy micro1-helmchart') {
+        stage('deploy micro2-helmchart') {
             steps {
                 withCredentials([kubeconfigContent(credentialsId: 'kube-config', variable: 'KUBECONFIG_CONTENT')]) {
     		sh label: '', script: 'helm install micro2-helmchart'
