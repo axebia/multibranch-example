@@ -8,15 +8,15 @@ pipeline {
         }
         stage('deploy micro-one-helmchart') {
             steps {
-                withCredentials([kubeconfigContent(credentialsId: 'kube-config', variable: 'KUBECONFIG_CONTENT')]) {
-    		sh label: '', script: 'helm install micro1-helmchart'
+                withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
+                sh label: '', script: 'helm install micro1-helmchart'
                 }
             }
         }
         stage('deploy micro-two-helmchart') {
             steps {
-                withCredentials([kubeconfigContent(credentialsId: 'kube-config', variable: 'KUBECONFIG_CONTENT')]) {
-    		sh label: '', script: 'helm install micro2-helmchart'
+                withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
+                sh label: '', script: 'helm install micro2-helmchart'
                 }
             }
         }
