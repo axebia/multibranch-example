@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-micros
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  backend:
+    serviceName: micro2
+    servicePort: 8080
+  rules:
+  - host: ashu-micro.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: micro2
+          servicePort: 8080

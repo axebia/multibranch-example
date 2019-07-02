@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: micro2
+spec:
+  selector:
+      matchLabels:
+        app: micro2
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: micro2
+    spec:
+      containers:
+        - name: micro2
+          image: ashurana31/micro2:micro2
+          env:
+            - name: EXPECTED_URI
+              value: http://192.168.99.100:32554
+          ports:
+            - containerPort: 8080
