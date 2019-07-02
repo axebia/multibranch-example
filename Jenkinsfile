@@ -6,7 +6,7 @@ pipeline {
                 git credentialsId: 'xebia_github', url: 'https://github.com/axebia/multibranch-example.git'
             }
         }
-        stage('Git Clone') {
+        stage('test') {
             steps {
                 script {
                     if (env.BRANCH_NAME == 'master') {
