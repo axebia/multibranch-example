@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Git Clone') {
             steps {
-                git credentialsId: 'xebia_github', url: 'https://github.com/axebia/multibranch-pipe-example.git'
+                git credentialsId: 'xebia_github', url: 'https://github.com/axebia/multibranch-example.git'
             }
         }
         stage('deploy micro-one-helmchart') {
