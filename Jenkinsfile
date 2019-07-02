@@ -9,6 +9,7 @@ pipeline {
         stage('deploy micro-one-helmchart') {
             steps {
                 withCredentials([file(credentialsId: 'kube-secret', variable: 'KUBECONFIG')]) {
+                    sh 'pwd;ls'
                 sh label: '', script: 'helm install micro1-helmchart'
                 }
             }
