@@ -9,7 +9,7 @@ spec:
     serviceName: micro2
     servicePort: 8080
   rules:
-  - host: ashu-micro2.com
+  - host: ashu-micro1.com
     http:
       paths:
       - path: /
